@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWS.Logger.NLog" Version="3.2.1" />
+    <PackageReference Include="NLog" Version="5.2.6" />
+    <PackageReference Include="NLog.Extensions.Hosting" Version="5.3.5" />
+    <PackageReference Include="Sentry.NLog" Version="4.0.0-beta.0" />
+  </ItemGroup>
+
+</Project>
