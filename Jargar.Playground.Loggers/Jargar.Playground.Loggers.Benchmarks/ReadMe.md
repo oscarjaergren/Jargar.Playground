@@ -7,4 +7,4 @@
 
 
 # Pictures
-![Image Alt Text](Pictures/benchmark.jpg)
+![Image Alt Text](Images/benchmark.jpg)
