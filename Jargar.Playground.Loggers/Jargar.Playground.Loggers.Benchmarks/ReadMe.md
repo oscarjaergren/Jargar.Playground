@@ -6,5 +6,5 @@
 * Microsoft Logger
 
 
-# Pictures
+# Benchmark
 ![Image Alt Text](Images/benchmark.jpg)
