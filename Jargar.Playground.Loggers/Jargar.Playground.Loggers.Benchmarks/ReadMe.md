@@ -1,7 +1,4 @@
-﻿INSERT READ ME INFORMATION HERE
-
-
-This project will compare 
+﻿This project will compare 
 
 * NLog
 * SeriLog
@@ -9,9 +6,5 @@ This project will compare
 * Microsoft Logger
 
 
-* Features
-
-//ToDo:S 
-
-Add Benchmark pictures
-Add 
+# Pictures
+![Image Alt Text](Pictures/benchmark.jpg)

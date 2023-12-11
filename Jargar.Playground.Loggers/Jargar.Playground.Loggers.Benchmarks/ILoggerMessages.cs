@@ -9,5 +9,4 @@ internal interface ILoggerMessages
     public void Logger_With_Logger_Define();
 
     public void Logger_Source_Generator();
-    
 }

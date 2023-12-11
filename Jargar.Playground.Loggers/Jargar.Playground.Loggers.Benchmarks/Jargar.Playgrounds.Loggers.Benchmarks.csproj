@@ -48,4 +48,8 @@
     <PackageReference Include="ZLogger" Version="1.7.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 </Project>
