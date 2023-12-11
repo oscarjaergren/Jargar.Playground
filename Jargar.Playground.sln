@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Solution Items\CodeStylesReadMe.md = Solution Items\CodeStylesReadMe.md
 		Solution Items\ConceptsReadMe.md = Solution Items\ConceptsReadMe.md
 		Solution Items\InterviewQuestionReadMe.md = Solution Items\InterviewQuestionReadMe.md
-		Solution Items\ReadMe.md = Solution Items\ReadMe.md
+		ReadMe.md = ReadMe.md
 		Solution Items\ToDosReadMe.md = Solution Items\ToDosReadMe.md
 	EndProjectSection
 EndProject
