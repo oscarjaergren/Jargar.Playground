@@ -21,11 +21,10 @@ public class SeriLogBenchmark : ILoggerMessages
 
     public SeriLogBenchmark()
     {
-        // Create SeriLogger
-        ILoggerFactory seriLoggerFactory = LoggerFactory.Create(builder => builder.AddSerilog());
-        _seriHostLogger = new Logger<SeriLogBenchmark>(seriLoggerFactory);
-
-        _seriLogger = SeriLogHelper.InitializeSerilog();
+        Log.Logger = new LoggerConfiguration()
+             .MinimumLevel.Debug()
+             .WriteTo.Console()
+             .CreateLogger();
     }
 
     [Benchmark, Category("SeriLogger")]
@@ -43,12 +42,12 @@ public class SeriLogBenchmark : ILoggerMessages
     [Benchmark, Category("SeriLogger")]
     public void Logger_With_Param()
     {
-        _seriHostLogger.LogInformation("Test {Number}", 1);
+        Log.Information("Test {Number}", 1);
     }
 
     [Benchmark, Category("SeriLogger")]
     public void Log_Simple()
     {
-        _seriLogger.Information("Test");
+        Log.Information("Test");
     }
 }

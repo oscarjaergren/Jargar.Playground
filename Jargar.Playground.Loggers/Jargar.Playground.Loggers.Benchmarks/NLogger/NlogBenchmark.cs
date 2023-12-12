@@ -1,10 +1,11 @@
-﻿using BenchmarkDotNet.Attributes;
-using System.ComponentModel;
+﻿using NLog.Extensions.Logging;
+using NLog;
 using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
+using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using System.ComponentModel;
 
-namespace Jargar.Playgrounds.Loggers.Benchmarks.NLog;
+namespace Jargar.Playgrounds.Loggers.Benchmarks.NLogger;
 
 #pragma warning disable CA1848 // Use the LoggerMessage delegates
 
@@ -14,10 +15,12 @@ namespace Jargar.Playgrounds.Loggers.Benchmarks.NLog;
 [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
 public class NlogBenchmark : ILoggerMessages
 {
-    private readonly ILogger _nLogger;
+    private readonly Microsoft.Extensions.Logging.ILogger _nLogger;
 
     public NlogBenchmark()
     {
+        LogManager.Setup().LoadConfiguration(builder => builder.ForLogger().FilterMinLevel(NLog.LogLevel.Info).WriteToConsole());
+
         _nLogger = LoggerFactory.Create(builder => builder.AddNLog()).CreateLogger<Program>();
     }
 

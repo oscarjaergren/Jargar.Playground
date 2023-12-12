@@ -19,20 +19,14 @@ public class ZLoggerBenchmark : ILoggerMessages
 
     public ZLoggerBenchmark()
     {
-        // Create ZLogger
         using var factory = LoggerFactory.Create(logging =>
         {
-            // optional(MS.E.Logging):clear default providers.
-            logging.ClearProviders();
-
-            // Add ZLogger provider to ILoggingBuilder
+            logging.SetMinimumLevel(LogLevel.Trace);
             logging.AddZLoggerConsole();
-
-            //  Add Console Logging and Enable Structured Logging
-            logging.AddZLoggerConsole(options => options.EnableStructuredLogging = true);
         });
 
-        _zLogger = factory.CreateLogger(nameof(ZLoggerBenchmark));
+        _zLogger = factory.CreateLogger("Program");
+
     }
 
     [Benchmark, Category("ZLogger")]
@@ -50,12 +44,12 @@ public class ZLoggerBenchmark : ILoggerMessages
     [Benchmark, Category("ZLogger")]
     public void Logger_With_Param()
     {
-        _zLogger.ZLogInformationWithPayload(1, "Test {1}");
+        _zLogger.ZLogInformation(1, $"Test {1}");
     }
 
     [Benchmark, Category("ZLogger")]
     public void Log_Simple()
     {
-        _zLogger.ZLogInformation("Test");
+        _zLogger.ZLogInformation($"Test");
     }
 }
