@@ -1,6 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using System.ComponentModel;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
@@ -16,8 +15,6 @@ namespace Jargar.Playgrounds.Loggers.Benchmarks.SeriLogger;
 public class SeriLogBenchmark : ILoggerMessages
 {
     private readonly ILogger _seriHostLogger;
-
-    private readonly Serilog.ILogger _seriLogger;
 
     public SeriLogBenchmark()
     {
